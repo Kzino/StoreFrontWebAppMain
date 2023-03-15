@@ -1,0 +1,4 @@
+com\astonengineers\version1\controller\ProductControllerTest.class
+com\astonengineers\version1\AstonengineersApplicationTests.class
+com\astonengineers\version1\repository\ProductRepositoryTest.class
+com\astonengineers\version1\service\ProductServiceTest.class
