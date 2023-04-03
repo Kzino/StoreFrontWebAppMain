@@ -18,11 +18,14 @@ import lombok.*;
 @Entity
 @Builder
 @Table(name = "PRODUCT")
-/**
- * This is the product model class and describes a what a product is
+/*
+  This is the product model class and describes a what a product is
  */
 public class Product {
 
+    /**
+     *
+     */
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Integer ID;

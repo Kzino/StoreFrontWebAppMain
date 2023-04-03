@@ -41,7 +41,6 @@ public class ProductController {
     /**
      * Retrieves a ProductResponse object representing a Product which has a unique identifier
      *
-     * @param id
      * @return a product service id
      */
     @GetMapping("/view")
@@ -66,7 +65,6 @@ public class ProductController {
     /**
      * Retrieves a ProductResponse object of the updated product
      *
-     * @param productUpdateRequest
      * @return the updated product
      */
     @PatchMapping(path = "update",
@@ -79,8 +77,6 @@ public class ProductController {
     /**
      * Deletes the product unique identifier (id)
      *
-     * @param id,
-     * @return
      */
     @DeleteMapping(path = "delete")
     public void deleteProduct(@RequestParam(required = true) Integer id) {

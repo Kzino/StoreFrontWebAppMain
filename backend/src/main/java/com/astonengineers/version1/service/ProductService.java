@@ -1,17 +1,16 @@
 package com.astonengineers.version1.service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import com.astonengineers.version1.controller.ProductUpdateRequest;
-import org.springframework.stereotype.Service;
-
 import com.astonengineers.version1.controller.ProductAddRequest;
 import com.astonengineers.version1.controller.ProductResponse;
+import com.astonengineers.version1.controller.ProductUpdateRequest;
 import com.astonengineers.version1.model.Product;
 import com.astonengineers.version1.repository.ProductRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * This class represents the Product Service which communicates between the Product Controller
@@ -29,10 +28,12 @@ public class ProductService {
      */
     public List<ProductResponse> getAllProducts() {
         List<Product> results = productRepository.findAll();
-        return results
-                .stream()
-                .map(this::toResponse)
-                .collect(Collectors.toList());
+        List<ProductResponse> collect = new ArrayList<>();
+        for (Product result : results) {
+            ProductResponse productResponse = toResponse(result);
+            collect.add(productResponse);
+        }
+        return collect;
     }
 
     /**
@@ -45,7 +46,7 @@ public class ProductService {
      */
     public ProductResponse findById(Integer id) {
         Optional<Product> product = productRepository.findById(id);
-        return toResponse(product.get());
+        return toResponse(product.get());   // TODO: 24/03/2023 sort this out
     }
 
     /**
@@ -114,7 +115,6 @@ public class ProductService {
     /**
      * Retrieves a ProductResponse object
      *
-     * @param model
      * @return a model of the Product
      */
     public ProductResponse toResponse(Product model) {

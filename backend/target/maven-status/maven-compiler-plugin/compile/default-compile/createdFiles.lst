@@ -1,10 +1,11 @@
+com\astonengineers\version1\controller\ProductUpdateRequest.class
+com\astonengineers\version1\model\Product.class
+com\astonengineers\version1\AstonengineersApplication.class
+com\astonengineers\version1\controller\ProductAddRequest.class
+com\astonengineers\version1\controller\SecurityConfig.class
 com\astonengineers\version1\repository\ProductRepository.class
 com\astonengineers\version1\service\ProductService.class
 com\astonengineers\version1\controller\ProductResponse$ProductResponseBuilder.class
 com\astonengineers\version1\controller\ProductController.class
 com\astonengineers\version1\controller\ProductResponse.class
-com\astonengineers\version1\controller\ProductUpdateRequest.class
-com\astonengineers\version1\model\Product.class
 com\astonengineers\version1\model\Product$ProductBuilder.class
-com\astonengineers\version1\AstonengineersApplication.class
-com\astonengineers\version1\controller\ProductAddRequest.class
