@@ -21,5 +21,5 @@ then type npm start
 cd into backend
 then type mvn spring-boot:run
 
-Make sure you have docker installed and set up
+Make sure you have docker installed and set up and running
 then type docker compose up

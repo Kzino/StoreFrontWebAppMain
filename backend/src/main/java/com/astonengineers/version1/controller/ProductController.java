@@ -2,6 +2,8 @@ package com.astonengineers.version1.controller;
 
 import java.util.List;
 
+import com.astonengineers.version1.security.dto.AuthRequest;
+import com.astonengineers.version1.security.service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,9 @@ public class ProductController {
     
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private JwtService jwtService;
 
     /**
      * Retrieves a list of all products
@@ -87,6 +92,11 @@ public class ProductController {
         productService.deleteProduct(id);
 
     }
+
+//    @PostMapping(path = "/authenticate")
+//    public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
+//        return jwtService.generateToken(authRequest.getUserName());
+//    }
 
     
 }

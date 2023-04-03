@@ -19,7 +19,13 @@ function Home() {
     },[]);
 
     const loadProducts = async () => {
-        const result = await axios.get("http://localhost:8081/list", {withCredentials:false})
+        let username = 'kwame';
+        let password = 'kwame';
+        let basicAuth = 'Basic ' + btoa(username + ':' + password);
+        console.log(basicAuth);
+        const result = await axios.get("http://localhost:8081/list", {headers:{
+                'Authorization':  basicAuth,
+            }, withCredentials:false})
         setProducts(result.data);
     }
 
